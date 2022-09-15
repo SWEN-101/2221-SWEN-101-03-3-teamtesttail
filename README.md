@@ -34,10 +34,6 @@ If any shortcomings, make clear what these are and where they are located.
 ## Link or full list of requirements
  <_you could linkto the specific private board where your backlog is kept_>
 
-
-
-
-
 ## License
 
 This project uses a custom PNFX License.
