@@ -10,6 +10,7 @@ A web application designed to help students pace themselves when preparing for e
 - Noah Vogtli
 - Nathan Strobl
 - Ata Noor
+- Nathan Teall
 
 
 ## Prerequisites  <_add anything else that applies_>
