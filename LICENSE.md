@@ -9,8 +9,8 @@
 > :x: Hosting this software for commercial use. \
 > :x: Redistributing this software, or the services it provides, to members outside of the organization this license was granted to, free or paid.  \
 > :x: Modifying, or reverse engineering the source code of, this software without express prior permission by a Team TestTail or Pencil Fox Studios representative on a case-by-case basis. \
-> :x: Using this software to harass, belittle, threaten, blackmail, stalk, spam (the API), or otherwise harm (the reputation) of an individual or other entity by any means.
-¹ <sub><sup>Permission from Team TestTail or Pencil Fox Studios is required for organizational use of this software. Please contact us before attempting.</sub></sup>
+> :x: Using this software to harass, belittle, threaten, blackmail, stalk, spam (the API), or otherwise harm (the reputation) of an individual or other entity by any means. \
+¹ <sup>Permission from Team TestTail or Pencil Fox Studios is required for organizational use of this software. Please contact us before attempting.</sup>
 ---
 ### Disclaimer
 > Failure to abide by these terms may result in temporary or permenant revocation of your license to use this software, with or without a full refund, if applicable. If you have any questions. please contact your Team TestTail or Pencil Fox Studios representative.
