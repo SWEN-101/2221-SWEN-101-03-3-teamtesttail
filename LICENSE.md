@@ -16,5 +16,5 @@
 ### Disclaimer
 > Failure to abide by these terms may result in temporary or permenant revocation of your license to use this software, with or without a full refund, if applicable. If you have any questions. please contact your Team TestTail or Pencil Fox Studios representative.
 ---
-#### � Pencil Fox Studios SP
+#### © Pencil Fox Studios SP
 All Rights Reserved
