@@ -8,7 +8,6 @@ A web application designed to help students pace themselves when preparing for e
 - Christian Morgado
 - Liam Weiner
 - Noah Vogtli
-- Ata
 - MEMBER03
 - Ata Noor
 
