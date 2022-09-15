@@ -8,7 +8,7 @@ An online E-store system built in github.io .. etc. <_replace with other platfor
 - Christian Morgado
 - MEMBER02
 - MEMBER03
-- MEMBER04
+- Ata
 
 
 ## Prerequisites  <_add anything else that applies_>
