@@ -1,10 +1,9 @@
 # Project Name: TestTail
 # Modify this document to expand any and all sections that are applicable for a better understanding from your users/testers/collaborators (remove this comment and other instructions areas for your FINAL release)
 
-A web application designed to help students pace themselves when preparing for exams
+Project TestTail (working name) will be a web application designed to help students pace themselves when preparing for exams. The student will be able to customize the timer based on the test they are taking; users will be able to customize things like the number of questions, amount of time each question should take, amount of time allowed on the test, and more.
   
 ## Team 
-<_each team member clones repo and then edits/replace with their name below_>
 - Christian Morgado
 - Liam Weiner
 - Noah Vogtli
@@ -15,8 +14,8 @@ A web application designed to help students pace themselves when preparing for e
 
 ## Prerequisites  <_add anything else that applies_>
 
-- github accounts and basic github.io knowledge
--
+- NodeJS
+- 
 -
 
 ## How to access it or run it  <_add when applicable_>
@@ -41,6 +40,6 @@ If any shortcomings, make clear what these are and where they are located.
 
 ## License
 
-<_replace with the type of license you will use for the project_> e.g. MIT License
+This project uses a custom PNFX License.
 
-See LICENSE for details.
+Please see LICENSE.md for details.
