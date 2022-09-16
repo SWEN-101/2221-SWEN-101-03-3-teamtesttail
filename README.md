@@ -1,0 +1,33 @@
+# Project TestTail℠
+Project TestTail℠ will be a web application designed to help students pace themselves when preparing for exams. The student will be able to customize the timer based on the test they are taking; users will be able to customize things like the number of questions, amount of time each question should take, amount of time allowed on the test, and more.
+  
+## Team TestTail is...
+- Christian Morgado
+- Liam Weiner
+- Noah Vogtli
+- Nathan Strobl
+- Ata Noor
+- Nathan Teall
+
+## Prerequisites
+- A server with open ports 3000, 80, and 443.
+- NodeJS
+- A snack or something, maybe some coffee, too.
+
+## How to access it or run it
+1. Clone the repository and go to the root directory.
+2. Run ``npm start``.
+
+## Known bugs and disclaimers
+Document any known bug or nuisance under the Issues tab.
+If any shortcomings, make clear what these are and where they are located.
+
+## Link or full list of requirements
+
+## License
+This project uses a custom PNFX License.
+
+Please see LICENSE.md for details.
+---
+#### © Team TestTail℠ and © Pencil Fox Studios SP
+All Rights Reserved
