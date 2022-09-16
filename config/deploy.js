@@ -9,7 +9,6 @@ module.exports = function (deployTarget) {
   ENV.git = {
     repo: 'https://github.com/SWEN-101/2221-SWEN-101-03-3-teamtesttail',
     branch: 'live',
-    worktreePath: '/tmp/ef4-deploy',
     commitMessage: 'Deployed %@'
   };
   if (deployTarget === 'development') {
