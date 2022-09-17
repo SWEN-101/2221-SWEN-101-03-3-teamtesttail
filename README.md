@@ -25,8 +25,6 @@
 Document any known bug or nuisance under the Issues tab.
 If any shortcomings, make clear what these are and where they are located.
 
-## Link or full list of requirements
----
 ## License
 This project uses a custom PNFX License.
 
@@ -34,5 +32,5 @@ Please see [LICENSE](LICENSE.md) for details.
 
 ---
 
-#### © Team TestTail℠ and © Pencil Fox Studios SP
-All Rights Reserved
+##### © Team TestTail℠ and © Pencil Fox Studios SP
+###### All Rights Reserved
