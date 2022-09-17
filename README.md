@@ -9,7 +9,8 @@
 - Ata Noor
 - Nathan Teall 
 
-> <sup><sub>Logo Artwork by Goose</sub></sup>
+> <sup><sub>Logo Artwork by Goose</sub></sup> 
+
 ---
 ## Prerequisites
 - A server with open ports 3000, 80, and 443.
