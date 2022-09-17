@@ -9,7 +9,7 @@
 - Ata Noor
 - Nathan Teall 
 
-<sup><sub>Logo Artwork by Goose</sub></sup> 
+<sub>Logo Artwork by Goose</sub>
 
 ---
 ## Prerequisites
