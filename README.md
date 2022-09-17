@@ -1,14 +1,15 @@
 ![Project TestTail](https://media.discordapp.net/attachments/612771858969788436/1020740691606917130/bannerTransparentFixed.png?width=1440&height=480)
-
 > Project TestTail℠ will be a web application designed to help students pace themselves when preparing for exams. The student will be able to customize the timer based on the test they are taking; users will be able to customize things like the number of questions, amount of time each question should take, amount of time allowed on the test, and more.
-  
+
 ## Team TestTail is...
 - Christian Morgado
 - Liam Weiner
 - Noah Vogtli
 - Nathan Strobl
 - Ata Noor
-- Nathan Teall
+- Nathan Teall 
+
+> <sup><sub>Logo Artwork by Goose</sub></sup>
 ---
 ## Prerequisites
 - A server with open ports 3000, 80, and 443.
