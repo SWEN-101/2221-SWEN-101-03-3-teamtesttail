@@ -3,13 +3,13 @@
 
 module.exports = function (deployTarget) {
   let ENV = {
-    build: {}
+    build: {},
     // include other plugin configuration that applies to all deploy targets here
   };
   ENV.git = {
     repo: 'https://github.com/SWEN-101/2221-SWEN-101-03-3-teamtesttail',
     branch: 'live',
-    commitMessage: 'Deployed %@'
+    commitMessage: 'Deployed %@',
   };
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';

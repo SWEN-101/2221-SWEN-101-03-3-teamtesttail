@@ -1,0 +1,102 @@
+/* body {
+    background-color: #2f3136;
+    font-family: "Montserrat";
+    color: white;
+} */
+.appbody {
+    background-color: #2b2a33;
+    color: white;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    font-family: "Oswald";
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+
+}
+
+.pacerbar {
+    background-color: skyblue;
+    color: orange;
+}
+
+.wraparound {
+    shape-outside: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+    position: absolute;
+    z-index: -2;
+    color: #514f5f;
+    text-shadow: 1px 1px #000000;
+    font: 50px "Oswald";
+    max-height: 100vh;
+    word-wrap: break-word;
+}
+
+.middleofpage {
+    text-align: center;
+}
+
+p {
+    color: darkgray
+}
+
+.logo {
+    background-image: url("https://media.discordapp.net/attachments/612771858969788436/1020740691606917130/bannerTransparentFixed.png?width=1440&height=480");
+    aspect-ratio: 4/1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+#visualtimer {
+    background-color: transparent;
+    outline-offset: -4px;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+    outline: #f67727 solid 5px;
+}
+
+.wraparound {
+    padding-left: 1vw;
+    padding-top: 1vw;
+}
+
+
+
+
+
+
+
+
+@keyframes progress {
+    0% {
+        // Top Left
+
+    }
+
+    20% {
+        // Bottom Left
+
+    }
+
+    40% {
+        // Bottom Right
+        opacity: 1;
+    }
+
+    60% {
+        // Top Right
+        opacity: .5;
+    }
+
+    100% {
+        // Top Left
+        opacity: .5;
+    }
+
+}
