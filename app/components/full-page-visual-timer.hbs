@@ -1,7 +1,20 @@
-<div id="visualtimer">
-    <div class="wraparound">
-        <p> Number of seconds: {{@seconds}}</p>
-    </div>
-
-
+<div class="fullscreen-timer">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </div>
+<script>
+    $(document).ready(function () {
+        var elem = document.getElementsByClassName('fullscreen-timer')
+        var anim = "fullscreen-timer"
+        var animEl = document.querySelector('.' + anim);
+        classie.add(animEl, 'la-animate');
+
+
+        setTimeout(function () {
+            classie.remove(elem, 'la-animate');
+
+        }, 6000);
+    })
+</script>

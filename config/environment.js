@@ -40,6 +40,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.rootURL = '/2221-SWEN-101-03-3-teamtesttail';
+    ENV.locationType = 'hash';
     // here you can enable a production-specific feature
   }
 
