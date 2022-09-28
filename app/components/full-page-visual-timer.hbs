@@ -1,11 +1,70 @@
+<hide style="display:none" id="seconds">{{@seconds}}</hide>
 <div class="fullscreen-timer">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    {{#each @sections as |section|}}
+    <div>
+        {{#each section as |number|}}
+        {{!-- {{number}} NOT IMPLEMENTED YET!!! --}}
+        {{/each}}
+    </div>
+    {{/each}}
+    {{!-- <div id="top">1 2 3 4 5 6 7 8 9</div>
+    <div id="right"></div>
+    <div id="bottom"></div>
+    <div id="left"></div> --}}
 </div>
 <script>
-    $(document).ready(function () {
+    document.documentElement.style.setProperty("--timer-seconds", "0s")
+
+    var Timer = easytimer.Timer;
+    var timer = new Timer();
+
+
+    function startTimer(seconds) {
+
+        document.documentElement.style.setProperty("--timer-seconds", `${seconds}s`)
+        document.documentElement.style.setProperty("--timer-seconds-1", `${seconds * 0.00}s`)
+        document.documentElement.style.setProperty("--timer-seconds-2", `${seconds * 0.25}s`)
+        document.documentElement.style.setProperty("--timer-seconds-3", `${seconds * 0.50}s`)
+        document.documentElement.style.setProperty("--timer-seconds-4", `${seconds * 0.75}s`)
+        document.documentElement.style.setProperty("--timer-each", `${(seconds - 0.3) / 4}s`)
+        timer.start({ countdown: true, startValues: { seconds: seconds } });
+
+        $('#time-display .values').html(timer.getTimeValues().toString());
+        $("#right").css("visibility", "hidden")
+        $("#bottom").css("visibility", "hidden")
+        $("#left").css("visibility", "hidden")
+        timer.addEventListener('secondsUpdated', function (e) {
+            $('#time-display .values').html(timer.getTimeValues().toString());
+            console.log(timer.getTotalTimeValues().seconds)
+
+            switch (timer.getTotalTimeValues().seconds) {
+                case (Math.round(parseFloat(document.documentElement.style.getPropertyValue("--timer-seconds-1")))):
+                    console.log("two!")
+
+
+                    break;
+                case (Math.round(parseFloat(document.documentElement.style.getPropertyValue("--timer-seconds-2")))):
+                    console.log("three!")
+                    $("#left").css("visibility", "visible")
+                    break;
+                case (Math.round(parseFloat(document.documentElement.style.getPropertyValue("--timer-seconds-3")))):
+                    console.log("four!")
+                    $("#bottom").css("visibility", "visible")
+                    break;
+                case (Math.round(parseFloat(document.documentElement.style.getPropertyValue("--timer-seconds-4")))):
+                    console.log("five!")
+                    $("#right").css("visibility", "visible")
+                    break;
+            }
+
+        });
+
+        timer.addEventListener('targetAchieved', function (e) {
+            $('#time-display .values').html('00:00:00');
+            $('#time-display .values').animate({ "color": "#50C878" }, 1000)
+            $('.appbody').animate({ "outline-color": "#50C878" }, 1000)
+        });
+
         var elem = document.getElementsByClassName('fullscreen-timer')
         var anim = "fullscreen-timer"
         var animEl = document.querySelector('.' + anim);
@@ -13,8 +72,14 @@
 
 
         setTimeout(function () {
-            classie.remove(elem, 'la-animate');
+            console.log("Timer finished!")
+            classie.add(animEl, 'la-finish');
 
-        }, 6000);
+        }, parseInt(seconds) * 1000);
+    }
+    $(document).ready(function () {
+        var seconds = $("#seconds").html();
+        startTimer(seconds)
     })
+
 </script>
