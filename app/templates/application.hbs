@@ -1,6 +1,4 @@
 {{page-title "TestTail"}}
-
-
 <FullPageVisualTimer @questions={{@model.questions}} @sections={{@model.sections}} @seconds=1 />
 
 <div class="container-fluid appbody">
@@ -18,9 +16,8 @@
                 <hr />
                 <input type="text" id="appt" name="fname">
             </div> --}}
-            <h1 id="time-display">
-                <div class="values">00:00:00</div>
-            </h1>
+            {{outlet}}
+
         </div>
 
 
@@ -29,4 +26,3 @@
     </div>
 
 </div>
-{{outlet}}
