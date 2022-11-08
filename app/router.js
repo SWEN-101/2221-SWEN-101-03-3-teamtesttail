@@ -13,4 +13,5 @@ Router.map(function () {
   this.route('test-settings');
   this.route('test-gsfqc');
   this.route('test-fpvt');
+  this.route('test-ctrlpanel');
 });
