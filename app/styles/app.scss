@@ -30,9 +30,14 @@ $timer_after_color: #f67727;
 
 }
 #time-display{
-    font-size:15vh;
+    font-size:20vh;
     text-shadow: 0.2vh 0.2vh 2vh black;
 
+}
+@media screen and (max-width: 600px) {
+    #time-display{
+        font-size: 25vw;
+    }
 }
 
 

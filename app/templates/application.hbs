@@ -1,7 +1,7 @@
 {{page-title "TestTail"}}
 
 
-<FullPageVisualTimer @questions={{@model.questions}} @sections={{@model.sections}} @seconds=60 />
+<FullPageVisualTimer @questions={{@model.questions}} @sections={{@model.sections}} @seconds=1 />
 
 <div class="container-fluid appbody">
 
@@ -10,7 +10,6 @@
         <p alt="TestTail Build Info">Commit {{app-version shaOnly=true}}</p>
     </div>
     <div class="middleofpage">
-
         {{!-- <h1 class="logo" alt="Project TestTail"></h1> --}}
         <div class="focused">
             {{!-- <div class="container">
@@ -19,7 +18,6 @@
                 <hr />
                 <input type="text" id="appt" name="fname">
             </div> --}}
-
             <h1 id="time-display">
                 <div class="values">00:00:00</div>
             </h1>
