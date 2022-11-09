@@ -23,8 +23,7 @@ module.exports = function (deployTarget) {
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
-    ENV.rootURL = '/2221-SWEN-101-03-3-teamtesttail';
-    ENV.locationType = 'history';
+
     // configure other plugins for production deploy target here
   }
 
