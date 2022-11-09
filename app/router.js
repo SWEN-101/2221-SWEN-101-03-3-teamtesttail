@@ -4,14 +4,13 @@ import config from 'test-tail/config/environment';
 export default class Router extends EmberRouter {
   location = config.locationType;
   rootURL = config.rootURL;
-  
 }
 
 Router.map(function () {
-  this.route('about', { path: '/about' });
-  this.route('favorites', { path: '/favs' });
-  this.route('test-settings');
-  this.route('test-gsfqc');
-  this.route('test-fpvt');
-  this.route('test-ctrlpanel');
+  this.route('testmode', function () {
+    this.route('ctrlpanel');
+    this.route('fpvt');
+    this.route('gsfqc');
+    this.route('settings');
+  });
 });

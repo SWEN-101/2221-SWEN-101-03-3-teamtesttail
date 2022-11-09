@@ -1,11 +1,11 @@
-{{page-title "TestGsfqc"}}
+{{page-title "Gsfqc"}}
 <p id="test">
 </p>
 <script>
     function getSectionsFromQuestionCount(numberOfQuestions, screenWidth = window.innerWidth, screenHeight = window.innerHeight) {
         // Returns an array of 4 strings -- [top, right, bottom, left] -- each creating an equal representation of time.
-        var perimeterTotal = ((screenWidth * 2) + (screenHeight *2));
-        var pxPerQuestion = perimeterTotal/numberOfQuestions;
+        var perimeterTotal = ((screenWidth * 2) + (screenHeight * 2));
+        var pxPerQuestion = perimeterTotal / numberOfQuestions;
         var widthPercentageOfScreen = screenWidth / perimeterTotal
         var heightPercentageOfScreen = screenHeight / perimeterTotal
         var highestNumberTop = Math.ceil(widthPercentageOfScreen * numberOfQuestions)
