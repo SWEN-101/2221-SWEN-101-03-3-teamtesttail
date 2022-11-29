@@ -87,7 +87,7 @@ p {
 
 // }
 
-/* Effect 9: Surrounding borders */
+
 .fullscreen-timer {
     
     position: fixed;
@@ -95,7 +95,7 @@ p {
     width: 100%;
     height: 100%;
     
-    box-shadow: 0 0 0.01vw 0.5vw #1e1e1e ;
+    
     border: 0vw solid $timer_before_color;
     pointer-events: none;
 }
@@ -133,7 +133,7 @@ p {
     align-content:center;
 }
 
-.fullscreen-timer.la-animate div:first-child {
+.fullscreen-timer.movetheline div:first-child {
     // box-shadow: 1vw -0.2vw 0.2vw 0.3vw rgba($timer_after_color, 0.2) ;
     width: 100%;
     -webkit-transition: width var(--timer-each) linear var(--timer-seconds-1);
@@ -147,7 +147,7 @@ p {
     align-content:start;
 }
 
-.fullscreen-timer.la-animate div:nth-child(2) {
+.fullscreen-timer.movetheline div:nth-child(2) {
     // box-shadow: 0.2vw 1vw 0.2vw 0.3vw rgba($timer_after_color, 0.2) ;
     height: 100%;
     -webkit-transition: height var(--timer-each) linear var(--timer-seconds-2);
@@ -162,7 +162,7 @@ p {
     align-content:center;
 }
 
-.fullscreen-timer.la-animate div:nth-child(3) {
+.fullscreen-timer.movetheline div:nth-child(3) {
     // box-shadow: -1vw 0.2vw 0.2vw 0.3vw rgba($timer_after_color, 0.2) ;
     width: 100%;
     -webkit-transition: width var(--timer-each) linear var(--timer-seconds-3);
@@ -176,14 +176,14 @@ p {
     align-content:center;
 }
 
-.fullscreen-timer.la-animate div:nth-child(4) {
+.fullscreen-timer.movetheline div:nth-child(4) {
     // box-shadow: -0.2vw -1vw 0.2vw 0.3vw rgba($timer_after_color, 0.2) ;
     height: 100%;
     -webkit-transition: height var(--timer-each) linear var(--timer-seconds-4);
     transition: height var(--timer-each) linear var(--timer-seconds-4);
 }
 
-.fullscreen-timer.la-animate {
+.fullscreen-timer.movetheline {
     z-index: 100;
    
     opacity: 0;

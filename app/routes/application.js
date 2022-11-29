@@ -1,7 +1,9 @@
 import Route from '@ember/routing/route';
 
 export default class VisualTimerRoute extends Route {
-  model() {
+  model(params) {
+    
+    
     return {
       sections: [
         // Not implemented yet.

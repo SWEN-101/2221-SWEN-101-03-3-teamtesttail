@@ -13,14 +13,17 @@
     <div id="left"></div> --}}
 </div>
 <script>
+
     document.documentElement.style.setProperty("--timer-seconds", "0s")
-
-    var Timer = easytimer.Timer;
-    var timer = new Timer();
-
-
+    function get_query() {
+        var qs = document.location.href.substring(document.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0, result = {}; i < qs.length; i++) {
+            qs[i] = qs[i].split('=');
+            result[qs[i][0]] = decodeURIComponent(qs[i][1]);
+        }
+        return result;
+    }
     function startTimer(seconds) {
-
         document.documentElement.style.setProperty("--timer-seconds", `${seconds}s`)
         document.documentElement.style.setProperty("--timer-seconds-1", `${seconds * 0.00}s`)
         document.documentElement.style.setProperty("--timer-seconds-2", `${seconds * 0.25}s`)
@@ -28,7 +31,6 @@
         document.documentElement.style.setProperty("--timer-seconds-4", `${seconds * 0.75}s`)
         document.documentElement.style.setProperty("--timer-each", `${(seconds - 0.3) / 4}s`)
         timer.start({ countdown: true, startValues: { seconds: seconds } });
-
         $('#time-display .values').html(timer.getTimeValues().toString());
         $("#right").css("visibility", "hidden")
         $("#bottom").css("visibility", "hidden")
@@ -36,7 +38,6 @@
         timer.addEventListener('secondsUpdated', function (e) {
             $('#time-display .values').html(timer.getTimeValues().toString());
             console.log(timer.getTotalTimeValues().seconds)
-
             switch (timer.getTotalTimeValues().seconds) {
                 case (Math.round(parseFloat(document.documentElement.style.getPropertyValue("--timer-seconds-1")))):
                     console.log("two!")
@@ -54,30 +55,24 @@
                     $("#right").css("visibility", "visible")
                     break;
             }
-
         });
-
         timer.addEventListener('targetAchieved', function (e) {
             $('#time-display .values').html('00:00:00');
             $('#time-display .values').animate({ "color": "#50C878" }, 1000)
             $('.appbody').animate({ "outline-color": "#50C878" }, 1000)
         });
-
         var elem = document.getElementsByClassName('fullscreen-timer')
         var anim = "fullscreen-timer"
         var animEl = document.querySelector('.' + anim);
-        classie.add(animEl, 'la-animate');
-
-
+        classie.add(animEl, 'movetheline');
         setTimeout(function () {
             console.log("Timer finished!")
             classie.add(animEl, 'la-finish');
-
         }, parseInt(seconds) * 1000);
     }
     $(document).ready(function () {
         var seconds = $("#seconds").html();
-        startTimer(seconds)
+        startTimer(parseInt(get_query().seconds))
     })
 
 </script>

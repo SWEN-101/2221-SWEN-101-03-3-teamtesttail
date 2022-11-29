@@ -1,40 +1,78 @@
 <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-success" id="pause-resume-button">Pause</button>
-    <button type="button" class="btn btn-danger" id="end-button">End</button>
+    <button type="button" class="btn btn-lg btn-warning" id="pause-resume-button">Pause</button>
+    <button type="button" class="btn btn-lg btn-danger" id="end-button">End</button>
 </div>
 
 
-<div class="modal fade" id="EndModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="EndModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                Are you sure you want to end this session?
-            </h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">End Session</button>
-            {{!-- ^ RECONFIGURE THIS BUTTON TO SEND YOU BACK TO MAIN MENU (main menu made by nathan t.) ^ --}}
-
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Resume</button>
-        </div>
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Are you sure you want to end this session?
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <a href="/"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        aria-label="Close">End Session</button></a>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Resume</button>
+            </div>
         </div>
     </div>
 </div>
 
 
 <script>
+    var Timer = easytimer.Timer;
+    var timer = new Timer();
     $(document).ready(function () {
+        var paused = false
+        timer.addEventListener('targetAchieved', function (e) {
+            $("#pause-resume-button").toggleClass("disabled")
+        });
         $("#pause-resume-button").click(function () {
-            console.log("Pause/Resume Button Clicked!")
-            // Triggered when the pause/resume button is clicked
+            var secondsTe = timer.getTimeValues().seconds
+            if (!paused) {
+                console.log("Pause/Resume Button Clicked!")
+                // Triggered when the pause/resume button is clicked
+                timer.pause()
+                $(".fullscreen-timer").children("div").each((i, elem) => {
+                    $(elem).hide()
+                })
+                $(".fullscreen-timer").toggleClass("movetheline")
+                $(this).text("Resume")
+                $(this).removeClass("btn-warning")
+                $(this).addClass("btn-success")
+                paused = true
+            } else {
+
+                $(".fullscreen-timer").children("div").each((i, elem) => {
+                    $(elem).show()
+                })
+                $(".fullscreen-timer").toggleClass("movetheline")
+
+                document.documentElement.style.setProperty("--timer-seconds", "0s")
+                document.documentElement.style.setProperty("--timer-seconds", `${secondsTe}s`)
+                document.documentElement.style.setProperty("--timer-seconds-1", `${secondsTe * 0.00}s`)
+                document.documentElement.style.setProperty("--timer-seconds-2", `${secondsTe * 0.25}s`)
+                document.documentElement.style.setProperty("--timer-seconds-3", `${secondsTe * 0.50}s`)
+                document.documentElement.style.setProperty("--timer-seconds-4", `${secondsTe * 0.75}s`)
+                document.documentElement.style.setProperty("--timer-each", `${(secondsTe - 0.3) / 4}s`)
+                timer.start({ countdown: true })
+                $(this).text("Pause")
+                $(this).removeClass("btn-success")
+                $(this).addClass("btn-warning")
+                paused = false
+            }
+
         })
 
         $("#end-button").click(function () {
             console.log("End Button Clicked!")
             // Triggered when the end button is clicked.
-            $('#EndModal').modal('show'); 
+            $('#EndModal').modal('show');
         })
 
     })

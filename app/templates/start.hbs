@@ -1,14 +1,27 @@
 {{page-title "Start"}}
-<FullPageVisualTimer @questions={{@model.questions}} @sections={{@model.sections}} @seconds="1" />
+<FullPageVisualTimer @questions={{@model.questions}} @sections={{@model.sections}} @seconds={{@model.seconds}} />
 
 <div class="middleofpage">
     {{!-- <h1 class="logo" alt="Project TestTail"></h1> --}}
     <div class="focused">
-
+        <Ctrlpanel />
         <h1 id="time-display">
             <div class="values">00:00:00</div>
         </h1>
-
+        <h2>You should be on question <b class="text-primary" id="currentQuestionNumber">1</b> at this time.</h2>
 
     </div>
 </div>
+<script>
+    function get_recommended_question(total_seconds, current_second, num_questions) {
+        var question_percent = current_second / total_seconds;
+        var result = Math.floor(question_percent * num_questions) + 1
+        if (result > num_questions) {
+            result = num_questions
+        }
+        return result
+    }
+    timer.addEventListener('secondsUpdated', function (e) {
+        $("#currentQuestionNumber").text(get_recommended_question(parseInt(get_query().seconds), parseInt(get_query().seconds) - timer.getTimeValues().seconds, parseInt(get_query().questions)))
+    })
+</script>
