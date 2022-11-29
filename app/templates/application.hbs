@@ -1,5 +1,5 @@
 {{page-title "TestTail"}}
-<FullPageVisualTimer @questions={{@model.questions}} @sections={{@model.sections}} @seconds="1" />
+
 
 <div class="container-fluid appbody">
 
@@ -7,22 +7,11 @@
         <p alt="TestTail Logos" class="attr-logo"></p>
         <p alt="TestTail Build Info">Commit {{app-version shaOnly=true}}</p>
     </div>
-    <div class="middleofpage">
-        {{!-- <h1 class="logo" alt="Project TestTail"></h1> --}}
-        <div class="focused">
-            {{!-- <div class="container">
-                <h2>Welcome to TestTail!</h2>
-                <p>Configure your test, then click start!</p>
-                <hr />
-                <input type="text" id="appt" name="fname">
-            </div> --}}
-            {{outlet}}
-
-        </div>
-
-
-
-
+    <div>
+        {{outlet}}
     </div>
+
+
+
 
 </div>
