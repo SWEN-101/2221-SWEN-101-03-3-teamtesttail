@@ -33,7 +33,7 @@
             $("#pause-resume-button").toggleClass("disabled")
         });
         $("#pause-resume-button").click(function () {
-            var secondsTe = timer.getTimeValues().seconds
+            var secondsTe = timer.getTotalTimeValues().seconds
             if (!paused) {
                 console.log("Pause/Resume Button Clicked!")
                 // Triggered when the pause/resume button is clicked
@@ -51,7 +51,7 @@
                 $(".fullscreen-timer").children("div").each((i, elem) => {
                     $(elem).show()
                 })
-                $(".fullscreen-timer").toggleClass("movetheline")
+
 
                 document.documentElement.style.setProperty("--timer-seconds", "0s")
                 document.documentElement.style.setProperty("--timer-seconds", `${secondsTe}s`)
@@ -61,6 +61,7 @@
                 document.documentElement.style.setProperty("--timer-seconds-4", `${secondsTe * 0.75}s`)
                 document.documentElement.style.setProperty("--timer-each", `${(secondsTe - 0.3) / 4}s`)
                 timer.start({ countdown: true })
+                $(".fullscreen-timer").toggleClass("movetheline")
                 $(this).text("Pause")
                 $(this).removeClass("btn-success")
                 $(this).addClass("btn-warning")
