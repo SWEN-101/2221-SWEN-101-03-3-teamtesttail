@@ -7,10 +7,12 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('testmode', function () { // this route brings you to a developer draft
+  this.route('testmode', function () {
+    // this route brings you to a developer draft
     this.route('ctrlpanel'); // ex. format: <uri>/testmode/ctrlpanel
     this.route('fpvt');
     this.route('gsfqc');
     this.route('settings');
   });
+  this.route('start');
 });
