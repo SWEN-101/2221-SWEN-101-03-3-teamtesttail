@@ -1,14 +1,13 @@
 
 {{!--Main page for the TestTail website. User can either choose a preset or make their own then begin the test.
     Todo: Add dynamic content. Make buttons link and save time and # of Q's settings
-          Also, About button is unresponsive. 
     Nathan Teall --}}
 <div>
     <header>
         <h1>Welcome to TestTail!</h1>
     </header>
-    <div class="card">
-        <div class="card-header">
+    <div class="card" style="width: 400px;">
+        <div class="card-header" style="text-align:center;">
             <div class="dropdown">
                 <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Choose from a preset here!
@@ -20,18 +19,69 @@
                 </ul>
             </div>
         </div>
-        <div class="card-body">
+        <div class="card-body" style="text-align:center;">
             <p>Alternatively, start from scratch below:</p>
-            <div class="input-group mb-3" style="width: 300px;">
-                <input type="text" class="form-control" placeholder="00:30:00" aria-label="00:30:00" style="text-align:center;">
-                <span class="input-group-text">for</span>
-                <input type="text" class="form-control" placeholder="20" aria-label="20" style="text-align:center;">
-                <span class="input-group-text">questions</span>
+            <div class="input-group mb-3 has-validation" style="width: 350px;">
+                <span class="input-group-text">Hours:</span>
+                <input id="hours" type="text" class="form-control" placeholder="00" aria-label="00" style="text-align:center;">
+
+                <span class="input-group-text">Minutes:</span>
+                <input id="minutes" type="text" class="form-control" placeholder="00" aria-label="00" style="text-align:center;">
+
+                <span class="input-group-text">Seconds:</span>
+                <input id="seconds" type="text" class="form-control" placeholder="00" aria-label="00" style="text-align:center;">
+
             </div>
-            <button type="button" class="btn btn-success"> Begin Test </button>
+            <div class="input-group mb-3" style="width: 150px;">
+                <span class="input-group-text">Questions:</span>
+                <input id="questions" type="text" class="form-control" placeholder="20" aria-label="20" style="text-align:center;">
+            </div>
+           
+            <a id="startButton" href="start?seconds=0" class="btn btn-success disabled" role="button" aria-disabled="true">Begin Test</a>
+            <p></p>
+            <button type="button" class="btn btn-outline-warning btn-lg" style="text-align:center;">About</button>
+            <script>
+                $(document).ready(function(){
+                    const secondsForm = document.getElementById("seconds");
+                    const minutesForm = document.getElementById("minutes");
+                    const hoursForm = document.getElementById("hours");
+                    var seconds = 0;
+                    var minutes = 0;
+                    var hours = 0;
+
+                    function checkTime(){
+                        var time = seconds+minutes+hours
+
+                        if (time){
+                            link = "start?seconds=" + time;
+                            $("#startButton").attr("href", link);
+                            $("#startButton").attr("class", "btn btn-success enabled");
+                            $("#startButton").attr("aria-disabled", "false");
+                            console.log("Enabled!")
+
+                        }else{
+                            $("#startButton").attr("class", "btn btn-success disabled");
+                            $("#startButton").attr("aria-disabled", "true");
+                            console.log("Disabled!")
+                        }
+                    }
+
+                    secondsForm.addEventListener('change', (event) => {
+                        seconds = parseInt(secondsForm.value);
+                        checkTime();
+                    });
+
+                    minutesForm.addEventListener('change', (event) => {
+                        minutes = parseInt(minutesForm.value)*60;
+                        checkTime();
+                    });
+
+                    hoursForm.addEventListener('change', (event) => {
+                        hours = parseInt(hoursForm.value)*3600;
+                        checkTime();
+                    });
+                });
+            </script>
         </div>
     </div>
-    <p></p>
-    <button type="button" class="btn btn-outline-warning btn-lg" style="z-index: 999;">About</button>
-    <p></p>
 </div>
