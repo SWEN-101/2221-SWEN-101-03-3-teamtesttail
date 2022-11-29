@@ -3,34 +3,35 @@
     Todo: Add dynamic content. Make buttons link and save time and # of Q's settings
           Also, About button is unresponsive. 
     Nathan Teall --}}
-
-<header>
-    <h1>Welcome to TestTail!</h1>
-</header>
-<div class="card">
-    <div class="card-header">
-        <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Choose from a preset here!
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">SAT - Standard</a></li>
-                <li><a class="dropdown-item" href="#">ACT - Standard</a></li>
-                <li><a class="dropdown-item" href="#">AP Calculus AB</a></li>
-            </ul>
+<div>
+    <header>
+        <h1>Welcome to TestTail!</h1>
+    </header>
+    <div class="card">
+        <div class="card-header">
+            <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Choose from a preset here!
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">SAT - Standard</a></li>
+                    <li><a class="dropdown-item" href="#">ACT - Standard</a></li>
+                    <li><a class="dropdown-item" href="#">AP Calculus AB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-body">
+            <p>Alternatively, start from scratch below:</p>
+            <div class="input-group mb-3" style="width: 300px;">
+                <input type="text" class="form-control" placeholder="00:30:00" aria-label="00:30:00" style="text-align:center;">
+                <span class="input-group-text">for</span>
+                <input type="text" class="form-control" placeholder="20" aria-label="20" style="text-align:center;">
+                <span class="input-group-text">questions</span>
+            </div>
+            <button type="button" class="btn btn-success"> Begin Test </button>
         </div>
     </div>
-    <div class="card-body">
-        <p>Alternatively, start from scratch below:</p>
-        <div class="input-group mb-3" style="width: 300px;">
-            <input type="text" class="form-control" placeholder="00:30:00" aria-label="00:30:00" style="text-align:center;">
-            <span class="input-group-text">for</span>
-            <input type="text" class="form-control" placeholder="20" aria-label="20" style="text-align:center;">
-            <span class="input-group-text">questions</span>
-        </div>
-        <button type="button" class="btn btn-success"> Begin Test </button>
-    </div>
+    <p></p>
+    <button type="button" class="btn btn-outline-warning btn-lg" style="z-index: 999;">About</button>
+    <p></p>
 </div>
-<p></p>
-<button type="button" class="btn btn-outline-warning btn-lg" style="z-index: 999;">About</button>
-<p></p>
