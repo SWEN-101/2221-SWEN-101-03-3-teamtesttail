@@ -13,7 +13,7 @@
 
 ---
 ## Prerequisites
-- A server with open ports 3000, 80, and 443.
+- A server with open ports 4200.
 - NodeJS
 - A snack or something, maybe some coffee, too.
 
