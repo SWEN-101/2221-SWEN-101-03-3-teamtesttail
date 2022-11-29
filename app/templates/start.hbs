@@ -15,13 +15,13 @@
 <script>
     function get_recommended_question(total_seconds, current_second, num_questions) {
         var question_percent = current_second / total_seconds;
-        var result = Math.floor(question_percent * num_questions) + 1
+        var result = Math.floor(question_percent * num_questions) + 1;
         if (result > num_questions) {
-            result = num_questions
+            result = num_questions;
         }
         return result
     }
     timer.addEventListener('secondsUpdated', function (e) {
-        $("#currentQuestionNumber").text(get_recommended_question(parseInt(get_query().seconds), parseInt(get_query().seconds) - timer.getTimeValues().seconds, parseInt(get_query().questions)))
+        $("#currentQuestionNumber").text(get_recommended_question(parseInt(get_query().seconds), parseInt(get_query().seconds) - timer.getTotalTimeValues().seconds, parseInt(get_query().questions)))
     })
 </script>
