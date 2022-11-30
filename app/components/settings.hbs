@@ -13,9 +13,10 @@
                     Choose from a preset here!
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">SAT - Standard</a></li>
-                    <li><a class="dropdown-item" href="#">ACT - Standard</a></li>
-                    <li><a class="dropdown-item" href="#">AP Calculus AB</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="usePreset(h=0,m=45,s=0,q=75)">ACT - English</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="usePreset(h=1,m=0,s=0,q=60)">ACT - Math</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="usePreset(h=0,m=35,s=0,q=40)">ACT - Science</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="usePreset(h=0,m=35,s=0,q=40)">ACT - Reading</a></li>
                 </ul>
             </div>
         </div>
@@ -39,55 +40,61 @@
            
             <a id="startButton" href="start?seconds=0" class="btn btn-success disabled" role="button" aria-disabled="true">Begin Test</a>
             <p></p>
-            <button type="button" class="btn btn-outline-warning btn-lg" style="text-align:center;">About</button>
+            <button id="about" type="button" class="btn btn-outline-warning btn-lg" style="text-align:center;">About</button>
             <script>
-                $(document).ready(function(){
-                    const secondsForm = document.getElementById("seconds");
-                    const minutesForm = document.getElementById("minutes");
-                    const hoursForm = document.getElementById("hours");
-                    const questionsForm = document.getElementById("questions");
-                    var seconds = 0;
-                    var minutes = 0;
-                    var hours = 0;
-                    var questions = 0;
+                const secondsForm = document.getElementById("seconds");
+                const minutesForm = document.getElementById("minutes");
+                const hoursForm = document.getElementById("hours");
+                const questionsForm = document.getElementById("questions");
 
-                    function checkTime(){
-                        var time = seconds+minutes+hours;
+                // Logic for disabling/enabling the button when valid/invalid values are entered
+                function checkTime(){
+                    var seconds = parseInt(secondsForm.value);
+                    var minutes = parseInt(minutesForm.value)*60;
+                    var hours = parseInt(hoursForm.value)*3600;
+                    var questions = parseInt(questionsForm.value);
+                    var time = seconds+minutes+hours;
 
-                        if (time && questions){
-                            link = "start?seconds=" + time + "&questions=" + questions;
-                            $("#startButton").attr("href", link);
-                            $("#startButton").attr("class", "btn btn-success enabled");
-                            $("#startButton").attr("aria-disabled", "false");
-                            console.log("Enabled!");
+                    if (time && questions){
+                        link = "start?seconds=" + time + "&questions=" + questions;
+                        $("#startButton").attr("href", link);
+                        $("#startButton").attr("class", "btn btn-success enabled");
+                        $("#startButton").attr("aria-disabled", "false");
+                        console.log("Enabled!");
 
-                        }else{
-                            $("#startButton").attr("class", "btn btn-success disabled");
-                            $("#startButton").attr("aria-disabled", "true");
-                            console.log("Disabled!");
-                        }
+                    }else{
+                        $("#startButton").attr("class", "btn btn-success disabled");
+                        $("#startButton").attr("aria-disabled", "true");
+                        console.log("Disabled!");
                     }
+                }
 
-                    secondsForm.addEventListener('change', (event) => {
-                        seconds = parseInt(secondsForm.value);
-                        checkTime();
-                    });
-
-                    minutesForm.addEventListener('change', (event) => {
-                        minutes = parseInt(minutesForm.value)*60;
-                        checkTime();
-                    });
-
-                    hoursForm.addEventListener('change', (event) => {
-                        hours = parseInt(hoursForm.value)*3600;
-                        checkTime();
-                    });
-
-                    questionsForm.addEventListener('change', (event) => {
-                        questions = parseInt(questionsForm.value);
-                        checkTime();
-                    });
+                // When the forms for the time/Qs is changed, it will get whatever is put into it and save how many seconds/mins/hours/questions
+                secondsForm.addEventListener('change', (event) => {
+                    checkTime();
                 });
+
+                minutesForm.addEventListener('change', (event) => {
+                    checkTime();
+                });
+
+                hoursForm.addEventListener('change', (event) => {
+                    checkTime();
+                });
+
+                questionsForm.addEventListener('change', (event) => {
+                    checkTime();
+                });
+
+                // Sets the proper values for time and questions when a preset is selected
+                function usePreset(h=0, m=0, s=0, q=0){
+                    document.getElementById("hours").value = h;
+                    document.getElementById("minutes").value = m;
+                    document.getElementById("seconds").value = s;
+                    document.getElementById("questions").value = q;
+                    checkTime();
+                }
+
             </script>
         </div>
     </div>
