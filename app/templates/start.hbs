@@ -8,20 +8,23 @@
         <h1 id="time-display">
             <div class="values">00:00:00</div>
         </h1>
-        <h2>You should be on question <b class="text-primary" id="currentQuestionNumber">1</b> at this time.</h2>
+        <h2>You should be on question <b style="color:#f67727;font-size:larger" d="currentQuestionNumber">1</b>/<b
+                class="text-secondary" id="totalQuestions">1</b> at this time.</h2>
 
     </div>
 </div>
 <script>
     function get_recommended_question(total_seconds, current_second, num_questions) {
         var question_percent = current_second / total_seconds;
-        var result = Math.floor(question_percent * num_questions) + 1
+        var result = Math.floor(question_percent * num_questions) + 1;
         if (result > num_questions) {
-            result = num_questions
+            result = num_questions;
         }
         return result
     }
+    $("#totalQuestions").text(get_query().questions)
     timer.addEventListener('secondsUpdated', function (e) {
-        $("#currentQuestionNumber").text(get_recommended_question(parseInt(get_query().seconds), parseInt(get_query().seconds) - timer.getTimeValues().seconds, parseInt(get_query().questions)))
+        $("#currentQuestionNumber").text(get_recommended_question(parseInt(get_query().seconds), parseInt(get_query().seconds) - timer.getTotalTimeValues().seconds, parseInt(get_query().questions)))
+        $("#totalQuestions").text(get_query().questions)
     })
 </script>
