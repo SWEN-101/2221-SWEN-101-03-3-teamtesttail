@@ -1,2 +1,23 @@
 {{page-title "Configure"}}
 <Settings />
+<div class="modal fade" id="AboutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <button id="close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-right:0; margin-left:auto; background-color: #f67727"></button>
+            <script>
+                $("#close").click(function () {
+                    // Triggered when the end button is clicked.
+                    $('#AboutModal').modal('hide');
+                })
+            </script>
+            <div class="modal-footer">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Welcome to TestTail!
+                    This application is a digital test timer. The purpose of this app is to assist students when preparing for standardized tests, such as the AP Exam, SATs, and ACTs (along with your own custom tests). 
+                    To begin, you can either choose a preset, or create your own by selecting the amount of questions and the allotted time. 
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
